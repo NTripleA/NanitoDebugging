@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - platform
+  - Atomo
+  - Atomo1
+  - Atomo2
+  - Atomo3
+  - Atomo4
+  - Enemy
+  - MovingPlatform
+  - Boss
+  - Door
+  - Nanita
+  - shield
+  - ffbottle
+  - Wings
+  - ActivatePlatform
+  - Boots
+  - box
+  - lever
+  - lever1
+  - Bridge
+  - Bridge1
+  - Bridge2
+  - Bridge3
+  - Bridge4
+  - Bridge5
+  - Bridge6
+  - Bridge7
+  - Checkpoint1
+  - Checkpoint2
+  - Checkpoint3
+  - Cehckpoint4
+  - Bullet
+  - orange
+  - spotlight
+  - teleport 1
+  - teleport 2
+  - finish
+  - turbo
+  - itemBox
+  - cloud
+  - red
+  - blue
+  - metal
+  - Fire
+  - hell
+  - floor
+  - flag1
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Player
+  - Background
+  - Ignore
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: bg
+    uniqueID: 2029310603
+    locked: 0
+  - name: UI
+    uniqueID: 3193963423
+    locked: 0
