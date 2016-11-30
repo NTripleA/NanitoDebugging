@@ -10,15 +10,19 @@ public class CheckpointScript : MonoBehaviour{
         posY = this.transform.position.y;
     }
 
-  void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.tag == "Player")
-        {
-            this.transform.GetChild(0).GetComponent<Renderer>().enabled = false;
-            this.transform.GetChild(1).GetComponent<Renderer>().enabled = true;
-            this.transform.GetChild(1).GetComponent<Animation>().Play("nanoflag");
-        }
-    }
+ // public void play(string tag)
+   // {
+        //if (tag == "Checkpoint1")
+        //{
+           // Transform t = GameObject.FindGameObjectWithTag(tag).transform;
+           // t.GetChild(0).GetComponent<Renderer>().enabled = false;
+           // t.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+           // t.GetChild(0).GetComponent<SpriteRenderer>().
+           // t.GetChild(1).GetComponent<SpriteRenderer>().enabled = true;
+            //t.GetChild(1).GetComponent<Animation>().Play("nanoflag");
+       // }
+    //}
+
     // Update is called once per frame
     void Update()
     {
