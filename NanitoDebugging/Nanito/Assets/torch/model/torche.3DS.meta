@@ -3,12 +3,16 @@ guid: 622107dd3c4416a4d9fcc501f396d549
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
+<<<<<<< HEAD
     100000: //RootNode
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
     4300000: torch
     11100000: //RootNode
+=======
+    4300000: torch
+>>>>>>> randomBranch
   materials:
     importMaterials: 1
     materialName: 0
@@ -16,7 +20,11 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+<<<<<<< HEAD
     resampleCurves: 1
+=======
+    resampleRotations: 1
+>>>>>>> randomBranch
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 

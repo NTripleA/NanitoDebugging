@@ -44,8 +44,13 @@ public class ProgressBar : MonoBehaviour {
 			triangulo = true;
 			circulo = false;
 			transform.position = new Vector3 (-570.7f, -60f, -25.4f);
+<<<<<<< HEAD
 			this.gameObject.GetComponent<Rigidbody> ().velocity = Vector3.zero;	
 			transform.rotation = Quaternion.Euler (359.69f, 181.4886f, 0);
+=======
+			transform.rotation = Quaternion.Euler (359.69f, 181.4886f, 0);
+			this.gameObject.GetComponent<Rigidbody> ().velocity = Vector3.zero;		
+>>>>>>> randomBranch
 		
 		}
 		if (other.gameObject.tag == "finish") {
@@ -88,7 +93,10 @@ public class ProgressBar : MonoBehaviour {
 				slider.value = 100;
 				GetComponent<Rigidbody> ().velocity = Vector3.zero;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> randomBranch
 			} else if (triangulo) {
 				transform.position = new Vector3 (-570.7f, -60f, -25.4f);
 				transform.rotation = Quaternion.Euler (359.69f, 181.4886f, 0);

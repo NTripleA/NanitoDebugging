@@ -38,6 +38,7 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
+<<<<<<< HEAD
     m_Name: Shield
     descriptiveName: 
     descriptiveNegativeName: 
@@ -45,6 +46,15 @@ InputManager:
     positiveButton: joystick button 0
     altNegativeButton: 
     altPositiveButton: 
+=======
+    m_Name: Fire1
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: left ctrl
+    altNegativeButton: 
+    altPositiveButton: mouse 0
+>>>>>>> randomBranch
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -74,7 +84,11 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
+<<<<<<< HEAD
     positiveButton: left cmd
+=======
+    positiveButton: left shift
+>>>>>>> randomBranch
     altNegativeButton: 
     altPositiveButton: mouse 2
     gravity: 1000
@@ -186,9 +200,15 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
+<<<<<<< HEAD
     positiveButton: joystick button 2
     altNegativeButton: 
     altPositiveButton: x
+=======
+    positiveButton: joystick button 0
+    altNegativeButton: 
+    altPositiveButton: 
+>>>>>>> randomBranch
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -234,7 +254,11 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
+<<<<<<< HEAD
     positiveButton: joystick button 1
+=======
+    positiveButton: joystick button 3
+>>>>>>> randomBranch
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -246,13 +270,21 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
+<<<<<<< HEAD
     m_Name: Return
+=======
+    m_Name: Submit
+>>>>>>> randomBranch
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: return
     altNegativeButton: 
+<<<<<<< HEAD
     altPositiveButton: joystick button 3
+=======
+    altPositiveButton: joystick button 0
+>>>>>>> randomBranch
     gravity: 1000
     dead: 0.001
     sensitivity: 1000

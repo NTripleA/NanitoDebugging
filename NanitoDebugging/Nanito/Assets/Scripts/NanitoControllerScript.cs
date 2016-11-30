@@ -8,9 +8,17 @@ public class NanitoControllerScript : MonoBehaviour {
 	public bool facingRight = true;
 	private float move;
 	public GameObject gunGO;
+<<<<<<< HEAD
 
 	Animator anim;
 	Animator bridgeAnim;
+=======
+    public GameObject boss;
+
+	Animator anim;
+	Animator bridgeAnim;
+    //new variable was added and deleted
+>>>>>>> randomBranch
 
 	float wingsFactor = 600f;
 	int wingsCounter = 0;
@@ -35,7 +43,11 @@ public class NanitoControllerScript : MonoBehaviour {
 	public Transform groundCheck;
 	float groundRadius = 0.2f;
 	public LayerMask whatIsGround;
+<<<<<<< HEAD
 	public float jumpForce = 1500f;
+=======
+	public float jumpForce = 1900f;
+>>>>>>> randomBranch
 
 	bool doubleJump = false;
 	private int time;
@@ -62,7 +74,11 @@ public class NanitoControllerScript : MonoBehaviour {
 		//detects colliders
 		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
 		anim.SetBool ("Ground", grounded); //idle anim
+<<<<<<< HEAD
 
+=======
+        //this was copypasted
+>>>>>>> randomBranch
 		if (grounded)
 			doubleJump = false;
 
@@ -130,7 +146,11 @@ public class NanitoControllerScript : MonoBehaviour {
 
 		
 		//BridgePlatformScript bridge = GetComponent<BridgePlatformScript> ();
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> randomBranch
 		if (collision.gameObject.tag == "orange") {
 //			damagePlayer = true;
 //			Debug.Log("shield not hit");
@@ -143,14 +163,22 @@ public class NanitoControllerScript : MonoBehaviour {
 				metalCell.hitByShield = true;
 				Debug.Log("shield hit");
 				//orangeCell = null;
+<<<<<<< HEAD
 				//if(playerHealth != null)
+=======
+				if(playerHealth != null)
+>>>>>>> randomBranch
 					playerHealth.Damage(orangeCell.damage,respawnPosX,respawnPosY,true);
 				
 			}
 			else{
 				damagePlayer = true;
 				Debug.Log("shield not hit");
+<<<<<<< HEAD
 				//if(playerHealth != null) 
+=======
+				if(playerHealth != null) 
+>>>>>>> randomBranch
 					playerHealth.Damage(orangeCell.damage,respawnPosX,respawnPosY,false);
 			}
 		}
@@ -158,14 +186,22 @@ public class NanitoControllerScript : MonoBehaviour {
 		if (collision.gameObject.tag == "red") {
 			damagePlayer = true;
 			Debug.Log("shield not hit");
+<<<<<<< HEAD
 			//if(playerHealth != null) 
+=======
+			if(playerHealth != null) 
+>>>>>>> randomBranch
 				playerHealth.Damage(redCell.damage,respawnPosX,respawnPosY,false);
 		}
 
 		if (collision.gameObject.tag == "blue") {
 			damagePlayer = true;
 			Debug.Log("shield not hit");
+<<<<<<< HEAD
 			//if(playerHealth != null) 
+=======
+			if(playerHealth != null) 
+>>>>>>> randomBranch
 				playerHealth.Damage(blueCell.damage,respawnPosX,respawnPosY,false);
 		}
 
@@ -185,11 +221,16 @@ public class NanitoControllerScript : MonoBehaviour {
 			else{
 				damagePlayer = true;
 				Debug.Log("shield not hit");
+<<<<<<< HEAD
 				//if(playerHealth != null) 
+=======
+				if(playerHealth != null) 
+>>>>>>> randomBranch
 					playerHealth.Damage(orangeCell.damage,respawnPosX,respawnPosY,false);
 			}
 		}
 
+<<<<<<< HEAD
 			
 		//if (floor != null) {
 		//	damagePlayer = true;
@@ -203,11 +244,31 @@ public class NanitoControllerScript : MonoBehaviour {
 			playerHealth.Damage(floor.damage, respawnPosX, respawnPosY, false);
 		}
 
+=======
+
+        //if (floor != null) {
+        //	damagePlayer = true;
+        //	hell = true;
+        //	Debug.Log("hell");
+        //
+        //}
+
+        if (collision.gameObject.tag == "hell")
+        {
+            damagePlayer = true;
+            playerHealth.Damage(floor.damage, respawnPosX, respawnPosY, false);
+        }
+        //edits were made here
+>>>>>>> randomBranch
 		if(collision.gameObject.name == "Checkpoint1") {
 			CheckpointScript checkpoint = collision.gameObject.GetComponent<CheckpointScript>();
 			respawnPosX = checkpoint.posX;
 			respawnPosY = checkpoint.posY;
+<<<<<<< HEAD
 			Destroy(collision.gameObject.GetComponent<Collider2D>());
+=======
+            Destroy(collision.gameObject.GetComponent<Collider2D>());
+>>>>>>> randomBranch
 		}
 		if(collision.gameObject.name == "Checkpoint2") {
 			CheckpointScript checkpoint = collision.gameObject.GetComponent<CheckpointScript>();
@@ -343,7 +404,11 @@ public class NanitoControllerScript : MonoBehaviour {
 		if ((grounded || !doubleJump) && Input.GetButtonDown ("Jump")) {
 			
 			//BRETTY GOOD, EH?
+<<<<<<< HEAD
 			anim.SetBool ("Ground", false);
+=======
+			anim.SetBool ("Ground", false);//change here?
+>>>>>>> randomBranch
 			this.transform.parent = null;
 			float newJumpForce = jumpForce;
 			
@@ -353,7 +418,11 @@ public class NanitoControllerScript : MonoBehaviour {
 				wingsCounter--;
 			}
 			if (!doubleJump && !grounded) {
+<<<<<<< HEAD
 				newJumpForce /= 2;
+=======
+				newJumpForce /= 1.5f;
+>>>>>>> randomBranch
 				doubleJump = true;
 			}
 			
@@ -400,12 +469,20 @@ public class NanitoControllerScript : MonoBehaviour {
 
 		//laberinto 1 camera zoom
 		if (((-143.4f) < this.gameObject.transform.position.x && this.gameObject.transform.position.x < (-12.6f)) && ((23f) < this.gameObject.transform.position.y && this.gameObject.transform.position.y < (103.8f))) {
+<<<<<<< HEAD
 			camera.orthographicSize = 15;
+=======
+			camera.orthographicSize = 19;
+>>>>>>> randomBranch
 
 		} 
 		//laberinto 2 zoom
 		else if (((820.4f) < this.gameObject.transform.position.x && this.gameObject.transform.position.x < (1051.9f)) && ((-134.8f) < this.gameObject.transform.position.y && this.gameObject.transform.position.y < (-16.2f))) {
+<<<<<<< HEAD
 			camera.orthographicSize = 15;
+=======
+			camera.orthographicSize = 19;
+>>>>>>> randomBranch
 		}
 		else {
 			camera.orthographicSize = 25;
@@ -469,7 +546,16 @@ public class NanitoControllerScript : MonoBehaviour {
 			GUI.Window (0, new Rect ((Screen.width / 2) - 350, (Screen.height / 2) - 130, 300, 250), ShowGUI, "BOSS FIGHT");
 			GUI.DrawTexture (new Rect ((Screen.width / 2) - 350, (Screen.height / 2) - 130, 300, 250), background);
 		}
+<<<<<<< HEAD
 	}
+=======
+        //Attempt to remove odd boss collider glitch.
+//        float x = boss.GetComponent<BoxCollider2D>().transform.position.x;
+  //      float y = boss.GetComponent<BoxCollider2D>().transform.position.y;
+    //    float z = boss.GetComponent<BoxCollider2D>().transform.position.z;
+      //  boss.GetComponent<BoxCollider2D>().transform.position = new Vector3(x + 10, y, z);
+    }
+>>>>>>> randomBranch
 
 
 	
@@ -632,7 +718,11 @@ public class NanitoControllerScript : MonoBehaviour {
 
 		case 5:
 			showPopUp = false;
+<<<<<<< HEAD
 			break;
+=======
+                break;
+>>>>>>> randomBranch
 		}
 	}
 }

@@ -3,12 +3,16 @@ guid: 69ec7fc160c05b24590cf0856f85aa5c
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
+<<<<<<< HEAD
     100000: //RootNode
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
     4300000: wallstone
     11100000: //RootNode
+=======
+    4300000: wallstone
+>>>>>>> randomBranch
   materials:
     importMaterials: 1
     materialName: 0
@@ -16,7 +20,11 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+<<<<<<< HEAD
     resampleCurves: 1
+=======
+    resampleRotations: 1
+>>>>>>> randomBranch
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 

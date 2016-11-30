@@ -11,8 +11,16 @@ public class BulletScript : MonoBehaviour {
 		NanitoControllerScript nanito = collision.gameObject.GetComponent<NanitoControllerScript>();
 
 
+<<<<<<< HEAD
 		
 		if (collision.gameObject.tag == "Enemy") {
+=======
+        if (collision.gameObject.tag == "floor")
+        {
+            Destroy(this.gameObject);
+        }
+        if (collision.gameObject.tag == "Enemy") {
+>>>>>>> randomBranch
 			Destroy(this.gameObject);
 			Destroy(collision.gameObject);	
 		}

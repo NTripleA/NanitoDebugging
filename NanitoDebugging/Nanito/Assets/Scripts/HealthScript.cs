@@ -7,6 +7,11 @@ public class HealthScript : MonoBehaviour {
 	public static int hp = 12;		//estas 2 lineas las anadi
 	public static int maxhp = 12;	//las cambie a static (variables globales)
 	public bool damaged;
+<<<<<<< HEAD
+=======
+	public GameObject nanito;
+	public bool dead;
+>>>>>>> randomBranch
 
 
 
@@ -22,7 +27,12 @@ public class HealthScript : MonoBehaviour {
 
 		}
 
+<<<<<<< HEAD
 		if (hp <= 0) {
+=======
+		if ((dead == true) || (hp <= 0)) {
+			Debug.Log("dead");
+>>>>>>> randomBranch
 			StartCoroutine(Dead (respawnPosX,respawnPosY));
 		}
 
@@ -41,11 +51,21 @@ public class HealthScript : MonoBehaviour {
 
 	IEnumerator Dead(float respawnPosX, float respawnPosY) {
 		Debug.Log ("dead");
+<<<<<<< HEAD
 		GetComponent<Renderer>().enabled = false;
 		yield return new WaitForSeconds(1);
 		transform.position = new Vector2 (respawnPosX, respawnPosY);
 		Debug.Log ("respawn");
 		GetComponent<Renderer>().enabled = true;
+=======
+		//GetComponent<Renderer>().enabled = false;
+		nanito.gameObject.SetActive (false);
+		yield return new WaitForSeconds(1);
+		nanito.gameObject.SetActive (true);
+		nanito.transform.position = new Vector2 (respawnPosX, respawnPosY);
+		Debug.Log ("respawn");
+		//GetComponent<Renderer>().enabled = true;
+>>>>>>> randomBranch
 		hp = maxhp;					//cambio
 		
 	}

@@ -29,9 +29,14 @@ namespace UnityStandardAssets.Vehicles.Car
         private void FixedUpdate()
         {
             // pass the input to the car!
+<<<<<<< HEAD
 			float h = CrossPlatformInputManager.GetAxis("Horizontal");
 			float v = CrossPlatformInputManager.GetAxis("Vertical");
 
+=======
+            float h = CrossPlatformInputManager.GetAxis("Horizontal");
+            float v = CrossPlatformInputManager.GetAxis("Vertical");
+>>>>>>> randomBranch
 #if !MOBILE_INPUT
             float handbrake = CrossPlatformInputManager.GetAxis("Jump");
             m_Car.Move(h, v, v, handbrake);
@@ -76,9 +81,14 @@ namespace UnityStandardAssets.Vehicles.Car
             }
             if(other.gameObject.tag == "cloud")
             {
+<<<<<<< HEAD
 				CloudAnim cloudanim = other.GetComponent<CloudAnim>();
                 GetComponent<ProgressBar>().cloudRefuel = false;
 				other.gameObject.GetComponent<CloudAnim>().enabled = false;
+=======
+                GetComponent<ProgressBar>().cloudRefuel = false;
+				other.gameObject.GetComponent<Animator>().enabled = false;
+>>>>>>> randomBranch
 				float x = car.transform.position.x;
 				float y = other.transform.position.y;
 				float z = car.transform.position.z;

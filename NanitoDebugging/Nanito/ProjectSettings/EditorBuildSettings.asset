@@ -6,6 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/Menu.unity
   - enabled: 1
     path: Assets/Scenes/OptionsScene.unity
@@ -21,3 +22,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Hidrofobia.unity
   - enabled: 1
     path: Assets/Scenes/PlayerSelect.unity
+=======
+    path: Assets/Scenes/nano.unity
+  - enabled: 1
+    path: Assets/Scenes/Hidrofobia.unity
+  - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+  - enabled: 1
+    path: Assets/Scenes/Lv3 F1.unity
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+  - enabled: 1
+    path: Assets/Scenes/OptionsScene.unity
+  - enabled: 1
+    path: Assets/Scenes/PlayerSelect.unity
+  - enabled: 1
+    path: Assets/SampleScenes/Scenes/Car.unity
+>>>>>>> randomBranch
