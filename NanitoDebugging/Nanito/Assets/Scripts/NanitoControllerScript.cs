@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using CnControls;
 using System.Collections;
 
 public class NanitoControllerScript : MonoBehaviour {
@@ -8,9 +9,11 @@ public class NanitoControllerScript : MonoBehaviour {
 	public bool facingRight = true;
 	private float move;
 	public GameObject gunGO;
+    public GameObject boss;
 
 	Animator anim;
 	Animator bridgeAnim;
+    //new variable was added and deleted
 
 	float wingsFactor = 600f;
 	int wingsCounter = 0;
@@ -35,7 +38,7 @@ public class NanitoControllerScript : MonoBehaviour {
 	public Transform groundCheck;
 	float groundRadius = 0.2f;
 	public LayerMask whatIsGround;
-	public float jumpForce = 1500f;
+	public float jumpForce = 1900f;
 
 	bool doubleJump = false;
 	private int time;
@@ -62,14 +65,14 @@ public class NanitoControllerScript : MonoBehaviour {
 		//detects colliders
 		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
 		anim.SetBool ("Ground", grounded); //idle anim
-
+        //this was copypasted
 		if (grounded)
 			doubleJump = false;
 
 //		anim.SetFloat ("vSpeed", rigidbody2D.velocity.y); //how fast r we going up or down
 
 
-		move = Input.GetAxis ("Horizontal");
+		move = CnInputManager.GetAxis ("Horizontal");
 
 		//mid-air movement enabler
 		//if (!grounded && Mathf.Abs(move) > 0.01f) return;
@@ -87,6 +90,7 @@ public class NanitoControllerScript : MonoBehaviour {
 			PopUp.transform.localScale = new Vector3 (-x, y, z);
 		}
 		else if (move < 0 && facingRight) {
+            
 			Flip ();
 			float x = PopUp.transform.localScale.x;
 			float y = PopUp.transform.localScale.y;
@@ -130,12 +134,12 @@ public class NanitoControllerScript : MonoBehaviour {
 
 		
 		//BridgePlatformScript bridge = GetComponent<BridgePlatformScript> ();
-
+        
 		if (collision.gameObject.tag == "orange") {
 //			damagePlayer = true;
 //			Debug.Log("shield not hit");
-//			if(playerHealth != null) 
-//				playerHealth.Damage(orangeCell.damage,respawnPosX,respawnPosY,false);
+			if(playerHealth != null) 
+				playerHealth.Damage(orangeCell.damage,respawnPosX,respawnPosY,false);
 
 			if(shieldGO.activeSelf == true) {
 				damagePlayer = false;
@@ -143,14 +147,14 @@ public class NanitoControllerScript : MonoBehaviour {
 				metalCell.hitByShield = true;
 				Debug.Log("shield hit");
 				//orangeCell = null;
-				//if(playerHealth != null)
+				if(playerHealth != null)
 					playerHealth.Damage(orangeCell.damage,respawnPosX,respawnPosY,true);
 				
 			}
 			else{
 				damagePlayer = true;
 				Debug.Log("shield not hit");
-				//if(playerHealth != null) 
+				if(playerHealth != null) 
 					playerHealth.Damage(orangeCell.damage,respawnPosX,respawnPosY,false);
 			}
 		}
@@ -158,14 +162,14 @@ public class NanitoControllerScript : MonoBehaviour {
 		if (collision.gameObject.tag == "red") {
 			damagePlayer = true;
 			Debug.Log("shield not hit");
-			//if(playerHealth != null) 
+			if(playerHealth != null) 
 				playerHealth.Damage(redCell.damage,respawnPosX,respawnPosY,false);
 		}
 
 		if (collision.gameObject.tag == "blue") {
 			damagePlayer = true;
 			Debug.Log("shield not hit");
-			//if(playerHealth != null) 
+			if(playerHealth != null) 
 				playerHealth.Damage(blueCell.damage,respawnPosX,respawnPosY,false);
 		}
 
@@ -185,29 +189,30 @@ public class NanitoControllerScript : MonoBehaviour {
 			else{
 				damagePlayer = true;
 				Debug.Log("shield not hit");
-				//if(playerHealth != null) 
+				if(playerHealth != null) 
 					playerHealth.Damage(orangeCell.damage,respawnPosX,respawnPosY,false);
 			}
 		}
 
-			
-		//if (floor != null) {
-		//	damagePlayer = true;
-		//	hell = true;
-		//	Debug.Log("hell");
-		//
-		//}
 
-		if (collision.gameObject.tag == "hell") {
-			damagePlayer = true;
-			playerHealth.Damage(floor.damage, respawnPosX, respawnPosY, false);
-		}
+        if (floor != null) {
+        	damagePlayer = true;
+        	hell = true;
+        	Debug.Log("hell");
+        
+        }
 
+        if (collision.gameObject.tag == "hell")
+        {
+            damagePlayer = true;
+            playerHealth.Damage(floor.damage, respawnPosX, respawnPosY, false);
+        }
+        //edits were made here
 		if(collision.gameObject.name == "Checkpoint1") {
 			CheckpointScript checkpoint = collision.gameObject.GetComponent<CheckpointScript>();
 			respawnPosX = checkpoint.posX;
 			respawnPosY = checkpoint.posY;
-			Destroy(collision.gameObject.GetComponent<Collider2D>());
+            Destroy(collision.gameObject.GetComponent<Collider2D>());
 		}
 		if(collision.gameObject.name == "Checkpoint2") {
 			CheckpointScript checkpoint = collision.gameObject.GetComponent<CheckpointScript>();
@@ -340,10 +345,10 @@ public class NanitoControllerScript : MonoBehaviour {
 	
 	void Update(){
 		// si brinco desde el piso o desde el primer brinco
-		if ((grounded || !doubleJump) && Input.GetButtonDown ("Jump")) {
+		if ((grounded || !doubleJump) && CnInputManager.GetButtonDown ("Jump")) {
 			
 			//BRETTY GOOD, EH?
-			anim.SetBool ("Ground", false);
+			anim.SetBool ("Ground", false);//change here?
 			this.transform.parent = null;
 			float newJumpForce = jumpForce;
 			
@@ -353,7 +358,7 @@ public class NanitoControllerScript : MonoBehaviour {
 				wingsCounter--;
 			}
 			if (!doubleJump && !grounded) {
-				newJumpForce /= 2;
+				newJumpForce /= 1.5f;
 				doubleJump = true;
 			}
 			
@@ -361,13 +366,13 @@ public class NanitoControllerScript : MonoBehaviour {
 		}
 
 		//activate gun
-		if ((gunFlag == true || shieldGO.activeSelf == true) && Input.GetButtonDown ("Fire1")) {
+		if ((gunFlag == true || shieldGO.activeSelf == true) && CnInputManager.GetButtonDown ("Fire1")) {
 			shieldGO.SetActive(false);
 			gunGO.SetActive (true);
 			Debug.Log ("say hello");
 			counter++;
 			
-			if(Input.GetButtonDown ("Fire1") && counter >= 2){
+			if(CnInputManager.GetButtonDown ("Fire1") && counter >= 2){
 				counter++;
 				Debug.Log("shot fired");
 				FfCounterManager.ffScore--;
@@ -381,7 +386,7 @@ public class NanitoControllerScript : MonoBehaviour {
 		}
 
 		//activate shield
-		if ((shieldFlag == true || gunGO.activeSelf == true) && Input.GetButtonDown ("Shield")) {
+		if ((shieldFlag == true || gunGO.activeSelf == true) && CnInputManager.GetButtonDown ("Shield")) {
 			gunGO.SetActive (false);
 			shieldGO.SetActive (true);
 			ShieldCounterManager.shieldScore--;
@@ -400,12 +405,12 @@ public class NanitoControllerScript : MonoBehaviour {
 
 		//laberinto 1 camera zoom
 		if (((-143.4f) < this.gameObject.transform.position.x && this.gameObject.transform.position.x < (-12.6f)) && ((23f) < this.gameObject.transform.position.y && this.gameObject.transform.position.y < (103.8f))) {
-			camera.orthographicSize = 15;
+			camera.orthographicSize = 19;
 
 		} 
 		//laberinto 2 zoom
 		else if (((820.4f) < this.gameObject.transform.position.x && this.gameObject.transform.position.x < (1051.9f)) && ((-134.8f) < this.gameObject.transform.position.y && this.gameObject.transform.position.y < (-16.2f))) {
-			camera.orthographicSize = 15;
+			camera.orthographicSize = 19;
 		}
 		else {
 			camera.orthographicSize = 25;
@@ -469,7 +474,12 @@ public class NanitoControllerScript : MonoBehaviour {
 			GUI.Window (0, new Rect ((Screen.width / 2) - 350, (Screen.height / 2) - 130, 300, 250), ShowGUI, "BOSS FIGHT");
 			GUI.DrawTexture (new Rect ((Screen.width / 2) - 350, (Screen.height / 2) - 130, 300, 250), background);
 		}
-	}
+        //Attempt to remove odd boss collider glitch.
+//        float x = boss.GetComponent<BoxCollider2D>().transform.position.x;
+  //      float y = boss.GetComponent<BoxCollider2D>().transform.position.y;
+    //    float z = boss.GetComponent<BoxCollider2D>().transform.position.z;
+      //  boss.GetComponent<BoxCollider2D>().transform.position = new Vector3(x + 10, y, z);
+    }
 
 
 	
@@ -632,7 +642,9 @@ public class NanitoControllerScript : MonoBehaviour {
 
 		case 5:
 			showPopUp = false;
-			break;
+                break;
 		}
 	}
+
+
 }

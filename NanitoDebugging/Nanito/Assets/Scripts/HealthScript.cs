@@ -41,11 +41,12 @@ public class HealthScript : MonoBehaviour {
 
 	IEnumerator Dead(float respawnPosX, float respawnPosY) {
 		Debug.Log ("dead");
-		GetComponent<Renderer>().enabled = false;
+        GameObject Nanito = GameObject.FindGameObjectWithTag("Nanito");
+		Nanito.GetComponent<Renderer>().enabled = false;
 		yield return new WaitForSeconds(1);
-		transform.position = new Vector2 (respawnPosX, respawnPosY);
+		Nanito.transform.position = new Vector2 (respawnPosX, respawnPosY);
 		Debug.Log ("respawn");
-		GetComponent<Renderer>().enabled = true;
+		Nanito.GetComponent<Renderer>().enabled = true;
 		hp = maxhp;					//cambio
 		
 	}
