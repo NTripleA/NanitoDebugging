@@ -38265,7 +38265,7 @@ Prefab:
       objectReference: {fileID: 332488660}
     - target: {fileID: 11400000, guid: baec086904791744185aaa07a6cf55c2, type: 2}
       propertyPath: m_TurnSpeed
-      value: 25
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: baec086904791744185aaa07a6cf55c2, type: 2}
       propertyPath: m_SpinTurnLimit

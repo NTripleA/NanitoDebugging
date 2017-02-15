@@ -138,8 +138,8 @@ public class NanitoControllerScript : MonoBehaviour {
 		if (collision.gameObject.tag == "orange") {
 //			damagePlayer = true;
 //			Debug.Log("shield not hit");
-			if(playerHealth != null) 
-				playerHealth.Damage(orangeCell.damage,respawnPosX,respawnPosY,false);
+//			if(playerHealth != null) 
+//				playerHealth.Damage(orangeCell.damage,respawnPosX,respawnPosY,false);
 
 			if(shieldGO.activeSelf == true) {
 				damagePlayer = false;

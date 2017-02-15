@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using CnControls;
 
 public class PopUpScript : MonoBehaviour {
 	public GameObject popup;
@@ -26,7 +27,7 @@ public class PopUpScript : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.GetButtonDown("Return")) {
+		if (CnInputManager.GetButtonDown("Return")) {
 			popup.SetActive(false);
 		}
 
